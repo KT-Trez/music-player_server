@@ -1,0 +1,37 @@
+{
+  "author": {
+    "name": "Trez",
+    "email": "bartlomiej@10g.pl"
+  },
+  "bugs": {
+    "url": ""
+  },
+  "dependencies": {
+    "@types/node": "^16.11.6",
+    "express": "^4.17.1",
+    "moment": "^2.29.1",
+    "nedb": "^1.8.0",
+    "nodemon": "^2.0.14"
+  },
+  "description": "Online music player server.",
+  "devDependencies": {
+    "typedoc": "^0.22.7",
+    "typedoc-plugin-rename-defaults": "^0.4.0"
+  },
+  "keywords": [
+    "audio webplayer",
+    "mp3 webplayer"
+  ],
+  "main": "production/server.js",
+  "name": "music-player",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "scripts": {
+    "deamon": "nodemon",
+    "dev": "tsc -w"
+  },
+  "type": "module",
+  "version": "0.2.0"
+}

@@ -1,0 +1,24 @@
+{
+  "alwaysStrict": true,
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "baseUrl": "./src",
+    "lib": ["dom", "es2020"],
+    "module": "ES2020",
+    "moduleResolution": "Node",
+    "outDir": "production",
+    "sourceMap": true,
+    "target": "ES2021"
+  },
+  "exclude": ["music-player"],
+  "include": ["src", "src/**/*"],
+  "typedocOptions": {
+    "cleanOutputDir": true,
+    "entryPoints": ["dev"],
+    "entryPointStrategy" : "expand",
+    "includeVersion": true,
+    "out": "docs"
+  }
+}

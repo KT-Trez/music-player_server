@@ -1,0 +1,14 @@
+# config
+/.idea
+
+# ignore
+/node_modules
+/package-lock.json
+/public/
+/production/
+
+# client
+/music-player/package-lock.json
+/music-player/node_modules/
+/music-player/src/mp3/
+/music-player/build/
