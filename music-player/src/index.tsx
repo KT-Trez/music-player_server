@@ -1,4 +1,4 @@
-import App from './App';
+import AppRoot from './AppRoot';
 import React from 'react';
 import ReactDOM from 'react-dom';
 
@@ -7,7 +7,7 @@ import './css/master.css';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <AppRoot/>
   </React.StrictMode>,
   document.getElementById('root')
 );

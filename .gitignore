@@ -10,5 +10,7 @@
 # client
 /music-player/package-lock.json
 /music-player/node_modules/
-/music-player/src/mp3/
 /music-player/build/
+
+# unigonre
+!/public/mp3/!keep
