@@ -30,6 +30,7 @@
     "url": ""
   },
   "scripts": {
+    "build": "tsc",
     "deamon": "nodemon",
     "dev": "tsc -w"
   },

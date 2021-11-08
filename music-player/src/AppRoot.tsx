@@ -13,7 +13,6 @@ export default function AppRoot() {
         <Box sx={{display: 'flex', height: 1, width: 1}}>
             <Drawer
                 anchor='left'
-                style={{overflowX: 'hidden'}}
                 sx={{
                     width: drawerWidth,
                     boxSizing: 'border-box',

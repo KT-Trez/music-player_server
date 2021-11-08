@@ -23,7 +23,7 @@ app.get('/admin', (req: Request, res: Response) => {
     res.sendFile('admin.html'); // todo: fix
 });
 
-app.get('/getAlbumsList', (req: Request, res: Response) => {
+app.get('/getAlbumsList', (req: Request, res: Response) => { // todo: merge with '/getAlbumContent'
     const mp3Uri: string = 'mp3'
     const mp3DirRelativePath: string = publicDir + '/' + mp3Uri;
 

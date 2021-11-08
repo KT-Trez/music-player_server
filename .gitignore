@@ -1,5 +1,6 @@
 # config
 /.idea
+/.run/
 
 # ignore
 /node_modules

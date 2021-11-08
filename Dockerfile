@@ -6,12 +6,11 @@ WORKDIR /usr/src/musicplayer
 
 # install node_modules
 COPY package*.json ./
-RUN npm install --only=prod
+RUN npm install --only=production
 
 # bundle app's code
 COPY . .
 
 # start app
 EXPOSE 3000
-CMD ['npm', 'run', 'build']
-CMD [ 'npm', 'run', 'deamon' ]
+CMD [ "npm", "run", "deamon" ]
