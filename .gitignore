@@ -1,17 +1,17 @@
-# config
-/.idea
-/.run/
-
-# ignore
+# dependencies
+/.env
+/cdn
+/local-storage
 /node_modules
 /package-lock.json
-/public/
-/production/
 
-# client
-/music-player/package-lock.json
-/music-player/node_modules/
-/music-player/build/
+# editors
+/.idea
+
+# production
+/dist
+/docs
 
 # unigonre
-!/public/mp3/!keep
+!/local-storage/!keep
+!/public/audio/!keep
