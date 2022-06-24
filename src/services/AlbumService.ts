@@ -11,8 +11,8 @@ export default class AlbumService {
 	 * @param {number} id - ID of the one album you want to get the information of.
 	 * @returns {Promise<Album | Album[]>} - data of all albums or, if ID specified, data of provided album.
 	 */
-	static async get(id?: number): Promise<Album | Album[]> {
-		// get info from database, remove .path parametr (it's only for the server use), return result
+	static async get(id?: string): Promise<Album | Album[]> {
+		// get info from database, remove 'path' parameter (it's only for the server use); return result
 		if (id) {
 			const album = await AlbumController.find({id}, false) as Album;
 			delete album.path;
@@ -30,7 +30,7 @@ export default class AlbumService {
 	 * @param {number} id - album's ID.
 	 * @returns {Promise<Song[]>} - data of all songs in album.
 	 */
-	static async getContent(id: number): Promise<Song[]> {
+	static async getContent(id: string): Promise<Song[]> {
 		const album = await AlbumController.find({id}, false) as Album;
 
 		return new Promise(resolve => {
@@ -52,15 +52,28 @@ export default class AlbumService {
 									id: album.id,
 									name: album.name
 								},
+								cover: {
+									cdn: null,
+									hasCover: false,
+									name: null
+								},
+								// todo: calc file's checksum
+								id: 'temp' + new Date().getTime() + Math.round(Math.random() * 1000000),
 								cdn: '/' + [cdnBaseURL, cdnAudioURL, album.name, dirent.name].join('/'),
 								name: dirent.name,
-								size: fileStats.size
+								size: Math.round(fileStats.size / 1024 / 1024 * 100) / 100
 							});
 						}
 					resolve(songs);
 				}
 			);
 		});
+	}
+
+	// todo: docs
+	static async isAlbumValid(id: string) {
+		const albumCount = await AlbumController.count({id});
+		return albumCount > 0;
 	}
 
 	/**

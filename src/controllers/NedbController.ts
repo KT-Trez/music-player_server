@@ -9,6 +9,21 @@ export default class NedbController {
 	static store: Datastore;
 
 	/**
+	 * Counts all documents that match the query.
+	 * @param {object} query - query that will be tested against all database records.
+	 */
+	static async count(query: object): Promise<number> {
+		return new Promise(resolve => {
+			this.store.count(query, (err: Error, count: number) => {
+				if (err)
+					throw err;
+
+				resolve(count);
+			});
+		});
+	}
+
+	/**
 	 * Searches for one or multiple documents that match the query.
 	 * @param {object} query - query that will be tested against all database records.
 	 * @param multiple - whether to search for multiple documents or not.
@@ -30,7 +45,7 @@ export default class NedbController {
 
 					resolve(documents);
 				});
-		})
+		});
 	}
 
 	/**

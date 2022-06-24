@@ -67,10 +67,10 @@ export default function updateAlbumsDB() {
 				albums.push( {
 					cover: {
 						cdn: cover ? '/' + [cdnBaseURL, cdnAudioURL, dirent.name, cover].join('/') : 'https://placehold.jp/240x240.png',
+						hasCover: !!cover,
 						name: cover ?? 'unavailable',
 					},
-					hasCover: !!cover,
-					id: parseInt(new Date().getTime() + Math.round(Math.random() * 1000).toString()),
+					id: new Date().getTime() + Math.round(Math.random() * 1000).toString(),
 					name: dirent.name,
 					path: path.resolve(cdnBaseURL, cdnAudioURL, dirent.name),
 					size: getAlbumSize(path.resolve(cdnBaseURL, cdnAudioURL, dirent.name))

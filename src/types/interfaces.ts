@@ -1,10 +1,10 @@
 export interface Album {
 	cover: {
-		cdn: string;
+		cdn: string | undefined;
+		hasCover: boolean;
 		name: string;
 	}
-	hasCover: boolean;
-	id: number;
+	id: string;
 	name: string;
 	path?: string;
 	size: number;
@@ -12,10 +12,17 @@ export interface Album {
 
 export interface Song {
 	album: {
-		id: number;
+		id: string;
 		name: string;
 	}
+	cover: {
+		cdn: string | undefined;
+		hasCover: boolean;
+		name: string;
+	}
+	id: string;
 	cdn: string;
 	name: string;
+	path?: string;
 	size: number;
 }
